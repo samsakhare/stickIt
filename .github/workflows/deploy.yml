@@ -16,18 +16,35 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Runs a single command using the runners shell
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      # # Runs a single command using the runners shell
+      # - name: FTP Deploy
+      #   uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      #   with:
+      #     # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
+      #     ftp-server: "ftp.sameersakhare.com"
+      #     # FTP account username
+      #     ftp-username: "github@sandbox.sameersakhare.com"
+      #     # FTP account password
+      #     ftp-password: "nRXy6S*xLVbP"
+      #     # The local folder to copy, defaults to root project folder
+      #     # local-dir: # optional, default is ./
+      #     # Passes through options into git-ftp
+      #     # git-ftp-args: # optional
+      #     #
+      - name: ftp-action
+        # You may pin to the exact commit or the version.
+        # uses: sebastianpopp/ftp-action@eb75c5cb29d23ee4a729720a27dfb66403cb0f6d
+        uses: sebastianpopp/ftp-action@v2.0.0
         with:
-          # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-          ftp-server: "ftp.sameersakhare.com"
-          # FTP account username
-          ftp-username: "github@sandbox.sameersakhare.com"
-          # FTP account password
-          ftp-password: "nRXy6S*xLVbP"
-          # The local folder to copy, defaults to root project folder
-          # local-dir: # optional, default is ./
-          # Passes through options into git-ftp
-          # git-ftp-args: # optional
-          #
+          # FTP host
+          host: "ftp.sameersakhare.com"
+          # FTP user
+          user: "github@sandbox.sameersakhare.com"
+          # FTP password
+          password: "nRXy6S*xLVbP"
+          # Force SSL encryption
+          forceSsl: # optional, default is false
+          # Local directory
+          localDir: # optional, default is .
+          # Remote directory
+          remoteDir: # optional, default is .
