@@ -25,9 +25,9 @@ jobs:
           # FTP account username
           ftp-username: "github@sandbox.sameersakhare.com"
           # FTP account password
-          ftp-password: "KkRi2txmPwwC"
+          ftp-password: "nRXy6S*xLVbP"
           # The local folder to copy, defaults to root project folder
-          local-dir: "./stickit/" # optional, default is ./
+          # local-dir: # optional, default is ./
           # Passes through options into git-ftp
           # git-ftp-args: # optional
           #
