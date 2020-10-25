@@ -46,6 +46,10 @@ function removeNote(e) {
     if (confirm("Are you sure want to delete the note?")) {
       let li = e.target.parentElement.parentElement;
       let ul = document.getElementById("lstNotes");
+
+      let strTitle = e.target.parentElement.firstElementChild.innerText;
+      let strNoteContent = e.target.parentElement.lastElementChild.innerText;
+      lsDelete({ strTitle, strNoteContent });
       ul.removeChild(li);
     }
     renderEmptyNote();
@@ -119,6 +123,31 @@ function lsSave(obj) {
       count: 1,
     };
     localStorage.setItem("notes", JSON.stringify(notes));
+  }
+}
+
+function lsDelete(obj) {
+  try {
+    if ("notes" in localStorage) {
+      let data = JSON.parse(localStorage.getItem("notes"));
+      if (data && data.notes && Array.isArray(data.notes)) {
+        let notes = {
+          notes: data.notes.reduce(
+            (p, c) => (
+              c.title !== obj.strTitle &&
+                c.content !== obj.strNoteContent &&
+                p.push(c),
+              p
+            ),
+            []
+          ),
+          count: data.notes.length - 1,
+        };
+        localStorage.setItem("notes", JSON.stringify(notes));
+      }
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
 
