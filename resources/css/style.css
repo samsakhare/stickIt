@@ -99,7 +99,7 @@ ul li h2 {
 
 ul li p {
   font-family: "Reenie Beanie", cursive;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 .delete {
@@ -109,10 +109,11 @@ ul li p {
   right: 0;
   width: 30px;
   height: 30px;
-  background-color: red;
-  border: 4px double white;
+  background-color: #ff5733;
+  border: 0px;
   font-weight: bold;
   cursor: pointer;
+  color: #ffffff;
 }
 
 ul li a {
