@@ -13,20 +13,21 @@ jobs:
   ftpUpload:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
-      with:
-        # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
-        ftp-server: 'ftp.sameersakhare.com'
-        # FTP account username
-        ftp-username: 'github@sandbox.sameersakhare.com'
-        # FTP account password
-        ftp-password: 'KkRi2txmPwwC'
-        # The local folder to copy, defaults to root project folder
-        local-dir: './stickit/' # optional, default is ./
-        # Passes through options into git-ftp
-        # git-ftp-args: # optional
+      # Runs a single command using the runners shell
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
+          ftp-server: "ftp.sameersakhare.com"
+          # FTP account username
+          ftp-username: "github@sandbox.sameersakhare.com"
+          # FTP account password
+          ftp-password: "KkRi2txmPwwC"
+          # The local folder to copy, defaults to root project folder
+          local-dir: "./stickit/" # optional, default is ./
+          # Passes through options into git-ftp
+          # git-ftp-args: # optional
+          #
