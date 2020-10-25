@@ -27,7 +27,7 @@ jobs:
           # FTP account password
           ftp-password: "nRXy6S*xLVbP"
           # The local folder to copy, defaults to root project folder
-          local-dir: ./ # optional, default is ./
+          # local-dir: # optional, default is ./
           # Passes through options into git-ftp
           # git-ftp-args: # optional
           #
