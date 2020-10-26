@@ -162,7 +162,7 @@ function lsRead() {
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("../../serviceworker.js")
+    .register("./serviceworker.js")
     .then((registration) => {
       console.log("SW Registered !");
       console.log(registration);
